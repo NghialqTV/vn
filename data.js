@@ -5,14 +5,16 @@ const ADMIN = {
 };
 
 const APPS = [
-  { id:"aov", name:"Hack Map AOV 6.0", link:"https://example.com" },
-  { id:"ff", name:"Mod Skin Free Fire", link:"https://example.com" }
+  { id:"aov", name:"Menu Unlock Skin [Android]", link:"https://blog.tapvietcode.com/dc-2/?alias=OkB2" },
+  { id:"aov", name:"Menu Hack Map + Unlock Skin [Android]", link:"https://blog.tapvietcode.com/dc-2/?alias=OkB2" }
 ];
 
 const KEYS = [
-  { name:"Get Key IOS", link:"https://example.com" }
+  { name:"Menu Unlock Skin [Androdi]", link:"https://duymmo.io.vn/ctvkey/3fun.php" }
+  { name:"Menu Hack Map [Androdi]", link:"https://duymmo.io.vn/ctvkey/3fun.php" }
+  { name:"Menu Unlock Skin [IOS]", link:"https://duymmo.io.vn/ctvkey/3fun.php" }
 ];
 
 const FILES = [
-  { title:"Pack Skin Conan", image:"assets/img/banner.jpg", link:"https://example.com" }
+  { title:"Pack 50 Skin ", image:"assets/img/banner.jpg", link:"https://linkx.me/EIqN" }
 ];
