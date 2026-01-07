@@ -11,8 +11,15 @@ admin.innerHTML = `
  <h2>${ADMIN.name}</h2>
 </div>`;
 
-apps.innerHTML='<h2>Tải App</h2>'+APPS.map(a=>`
-<div class="card"><b>${a.name}</b><a href="${a.link}" class="btn">⬇ Tải</a></div>`).join('');
+apps.innerHTML = '<h2>Tải App</h2>' + APPS.map(a => `
+<div class="card" style="display:flex;align-items:center;gap:12px">
+  <img src="${a.icon}" style="width:48px;height:48px;border-radius:10px">
+  <div style="flex:1">
+    <b>${a.name}</b>
+  </div>
+  <a href="${a.link}" class="btn">⬇</a>
+</div>
+`).join('');
 
 keys.innerHTML='<h2>Get Key</h2>'+KEYS.map(k=>`
 <div class="card"><b>${k.name}</b><a href="${k.link}" class="btn">↗ Lấy Key</a></div>`).join('');
