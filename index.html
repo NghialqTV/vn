@@ -27,5 +27,38 @@
 
 <script src="data.js"></script>
 <script src="main.js"></script>
+ <script>
+const snowContainer = document.createElement("div");
+snowContainer.style.position = "fixed";
+snowContainer.style.top = "0";
+snowContainer.style.left = "0";
+snowContainer.style.width = "100%";
+snowContainer.style.height = "100%";
+snowContainer.style.pointerEvents = "none";
+snowContainer.style.zIndex = "9999";
+document.body.appendChild(snowContainer);
+
+function createSnow() {
+  const snow = document.createElement("div");
+  snow.innerHTML = "❄";
+  snow.style.position = "absolute";
+  snow.style.left = Math.random() * window.innerWidth + "px";
+  snow.style.fontSize = Math.random() * 12 + 10 + "px";
+  snow.style.opacity = Math.random();
+  snow.style.top = "-20px";
+  snow.style.transition = "top 6s linear";
+  snowContainer.appendChild(snow);
+
+  setTimeout(() => {
+    snow.style.top = window.innerHeight + "px";
+  }, 50);
+
+  setTimeout(() => {
+    snow.remove();
+  }, 6000);
+}
+
+setInterval(createSnow, 200);
+ </script>
 </body>
 </html>
