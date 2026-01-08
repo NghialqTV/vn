@@ -24,35 +24,32 @@ function renderFiles(){
     .then(res => res.json())
     .then(files => {
       document.getElementById("files").innerHTML =
-        files.map(f => `
-          <div class="card">
-            <img class="icon" src="${f.icon}">
-            <div class="info">
-              <b>${f.name}</b>
-              <div>${f.version}</div>
-            </div>
-            <a href="${f.link}">⬇</a>
-          </div>
+        files.map(f => {
 
-          ${f.banner ? `
-            <div class="file-banner">
-              <img src="${f.banner}">
+          let bannerHTML = "";
+
+          if (f.banner && f.banner.trim() !== "") {
+            bannerHTML = `
+              <div class="file-banner">
+                <img src="${f.banner}">
+              </div>
+            `;
+          }
+
+          return `
+            <div class="card">
+              <img class="icon" src="${f.icon}">
+              <div class="info">
+                <b>${f.name}</b>
+                <div>${f.version}</div>
+              </div>
+              <a href="${f.link}">⬇</a>
             </div>
-          ` : ``}
-        `).join("");
+            ${bannerHTML}
+          `;
+        }).join("");
     });
 }
-
-renderFiles();
-/* ===== DARK MODE ===== */
-if(localStorage.getItem("dark") === "true"){
-  document.body.classList.add("dark");
-}
-
-/* ===== PAGE LOAD ===== */
-window.addEventListener("load", () => {
-  document.body.classList.add("loaded");
-});
 
 /* ===== HOA MAI RƠI TỰ DO ===== */
 const maiFall = document.getElementById("mai-fall");
