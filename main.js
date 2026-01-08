@@ -1,75 +1,80 @@
-/* ===== RENDER DATA ===== */
-function render(url, boxId){
-  fetch(url)
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById(boxId).innerHTML =
-        data.map(i => `
-          <div class="card">
-            <img class="icon" src="${i.icon}">
-            <div class="info">
-              <b>${i.name}</b>
-              <div>${i.version}</div>
-            </div>
-            <a href="${i.link}">⬇</a>
-          </div>
-        `).join("");
-    });
+/* ===== SAFE FETCH ===== */
+async function safeFetch(url){
+  const res = await fetch(url);
+  if(!res.ok) throw new Error("Không tải được: " + url);
+  return res.json();
 }
 
-render("data/apps.json", "apps");
-render("data/keys.json", "keys");
-function renderFiles(){
-  fetch("data/files.json")
-    .then(res => res.json())
-    .then(files => {
-      document.getElementById("files").innerHTML =
-        files.map(f => `
-          <div class="card">
-            <img class="icon" src="${f.icon}">
-            <div class="info">
-              <b>${f.name}</b>
-              <div>${f.version}</div>
-            </div>
-            <a href="${f.link}">⬇</a>
+/* ===== RENDER CHUNG ===== */
+async function render(url, boxId){
+  try{
+    const data = await safeFetch(url);
+    document.getElementById(boxId).innerHTML =
+      data.map(i => `
+        <div class="card">
+          <img class="icon" src="${i.icon}" loading="lazy">
+          <div class="info">
+            <b>${i.name}</b>
+            <div>${i.version || ""}</div>
           </div>
+          <a href="${i.link}" target="_blank">⬇</a>
+        </div>
+      `).join("");
+  }catch(e){
+    document.getElementById(boxId).innerHTML =
+      `<p style="text-align:center;opacity:.6">Không có dữ liệu</p>`;
+  }
+}
 
-          ${f.banner ? `
-            <div class="file-banner">
-              <img src="${f.banner}">
-            </div>
-          ` : ``}
-        `).join("");
-    });
+render("data/apps.json","apps");
+render("data/keys.json","keys");
+
+/* ===== FILE MOD – FIX TUYỆT ĐỐI ẢNH TRẮNG ===== */
+async function renderFiles(){
+  try{
+    const files = await safeFetch("data/files.json");
+    document.getElementById("files").innerHTML =
+      files.map(f => `
+        <div class="card">
+          <img class="icon" src="${f.icon}" loading="lazy">
+          <div class="info">
+            <b>${f.name}</b>
+            <div>${f.version || ""}</div>
+          </div>
+          <a href="${f.link}" target="_blank">⬇</a>
+        </div>
+
+        ${f.banner && f.banner.trim() !== "" ? `
+          <div class="file-banner">
+            <img src="${f.banner}" loading="lazy">
+          </div>
+        ` : ""}
+      `).join("");
+  }catch(e){
+    document.getElementById("files").innerHTML =
+      `<p style="text-align:center;opacity:.6">Chưa có file</p>`;
+  }
 }
 
 renderFiles();
+
 /* ===== DARK MODE ===== */
-if(localStorage.getItem("dark") === "true"){
+if(localStorage.getItem("dark")==="true"){
   document.body.classList.add("dark");
 }
 
-/* ===== PAGE LOAD ===== */
-window.addEventListener("load", () => {
-  document.body.classList.add("loaded");
-});
-
-/* ===== HOA MAI RƠI TỰ DO ===== */
+/* ===== HOA MAI RƠI ===== */
 const maiFall = document.getElementById("mai-fall");
 
 function createMai(){
   const m = document.createElement("div");
   m.className = "mai";
-  m.innerText = "🌼";
-
-  m.style.left = Math.random() * 100 + "vw";
-  m.style.fontSize = (14 + Math.random() * 10) + "px";
-  m.style.animationDuration = (5 + Math.random() * 4) + "s";
-  m.style.opacity = Math.random() * 0.6 + 0.4;
-
+  m.textContent = "🌼";
+  m.style.left = Math.random()*100+"vw";
+  m.style.fontSize = 14 + Math.random()*10 + "px";
+  m.style.animationDuration = 5 + Math.random()*4 + "s";
   maiFall.appendChild(m);
-
-  setTimeout(() => m.remove(), 10000);
+  setTimeout(()=>m.remove(),10000);
 }
 
-setInterval(createMai, 500);
+setInterval(createMai,600);
