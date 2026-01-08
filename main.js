@@ -29,7 +29,6 @@ async function render(url, boxId){
 render("data/apps.json","apps");
 render("data/keys.json","keys");
 
-/* ===== FILE MOD – FIX TUYỆT ĐỐI ẢNH TRẮNG ===== */
 function renderFiles(){
   fetch("data/files.json")
     .then(res => res.json())
@@ -45,9 +44,11 @@ function renderFiles(){
             <a href="${f.link}">⬇</a>
           </div>
 
-          <div class="file-banner" ${!f.banner ? 'style="display:none"' : ''}>
-            ${f.banner ? `<img src="${f.banner}" onerror="this.parentElement.remove()">` : ``}
-          </div>
+          ${f.banner ? `
+            <div class="file-banner">
+              <img src="${f.banner}" onerror="this.style.display='none'">
+            </div>
+          ` : ``}
         `).join("");
     });
 }
