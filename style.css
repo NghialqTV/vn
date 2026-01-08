@@ -203,6 +203,4 @@ body.dark .card{
   width:100%;
   display:block;
 }
-.big-banner:has(img[src=""]){
-  display:none;
-}
+
