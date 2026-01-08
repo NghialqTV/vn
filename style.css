@@ -11,19 +11,22 @@ body{
   padding:20px;
 }
 .site-logo{
-  width:80px;
-  height:80px;
-  border-radius:20px;
-  box-shadow:0 6px 16px rgba(0,0,0,.25);
-  margin-bottom:8px;
+  width:120px;          /* TO HƠN */
+  height:120px;
+  border-radius:50%;    /* TRÒN */
+  object-fit:cover;
+  box-shadow:0 10px 26px rgba(0,0,0,.35);
+  margin-bottom:12px;
+  background:#fff;
 }
 
 /* TITLE */
 .section-title{
   text-align:center;
-  font-size:20px;
-  font-weight:600;
-  margin:22px 0 14px;
+  font-size:26px;      /* TO RÕ */
+  font-weight:700;
+  margin:28px 0 18px;
+  letter-spacing:0.5px;
 }
 
 /* LIST */
@@ -60,12 +63,13 @@ body{
   flex:1;
 }
 .card .info b{
-  display:block;
-  font-size:15px;
+  font-size:17px;
+  font-weight:700;
 }
+
 .card .info div{
-  font-size:13px;
-  opacity:.7;
+  font-size:14px;
+  opacity:.8;
 }
 
 /* DOWNLOAD */
@@ -193,4 +197,11 @@ body.dark .card{
 .file-banner img{
   width:100%;
   display:block;
+}
+/* ===== STEP 5: TITLE HEADER ===== */
+header h1{
+  font-size:28px;
+  font-weight:800;
+  letter-spacing:1px;
+  margin:6px 0 0;
 }
