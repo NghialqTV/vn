@@ -24,30 +24,22 @@ function renderFiles(){
     .then(res => res.json())
     .then(files => {
       document.getElementById("files").innerHTML =
-        files.map(f => {
-
-          let bannerHTML = "";
-
-          if (f.banner && f.banner.trim() !== "") {
-            bannerHTML = `
-              <div class="file-banner">
-                <img src="${f.banner}">
-              </div>
-            `;
-          }
-
-          return `
-            <div class="card">
-              <img class="icon" src="${f.icon}">
-              <div class="info">
-                <b>${f.name}</b>
-                <div>${f.version}</div>
-              </div>
-              <a href="${f.link}">⬇</a>
+        files.map(f => `
+          <div class="card">
+            <img class="icon" src="${f.icon}">
+            <div class="info">
+              <b>${f.name}</b>
+              <div>${f.version}</div>
             </div>
-            ${bannerHTML}
-          `;
-        }).join("");
+            <a href="${f.link}">â¬‡</a>
+          </div>
+
+          ${f.banner ? `
+            <div class="file-banner">
+              <img src="${f.banner}">
+            </div>
+          ` : ``}
+        `).join("");
     });
 }
 
