@@ -30,21 +30,21 @@ window.addEventListener("load",()=>{
 const maiBox = document.getElementById("mai-fall");
 
 function createMai(){
+  const maiFall = document.getElementById("mai-fall");
+
+function createMai(){
   const m = document.createElement("div");
   m.className = "mai";
   m.innerText = "🌼";
 
-  m.style.left = Math.random()*100 + "vw";
-  m.style.animationDuration =
-    (6 + Math.random()*4) + "s," +
-    (3 + Math.random()*3) + "s";
+  m.style.left = Math.random() * 100 + "vw";
+  m.style.fontSize = (14 + Math.random() * 10) + "px";
+  m.style.animationDuration = (5 + Math.random() * 4) + "s";
+  m.style.opacity = Math.random() * 0.6 + 0.4;
 
-  m.style.opacity = Math.random();
-  m.style.fontSize = 16 + Math.random()*20 + "px";
+  maiFall.appendChild(m);
 
-  maiBox.appendChild(m);
-
-  setTimeout(()=>m.remove(),12000);
+  setTimeout(()=>m.remove(), 10000);
 }
 
-setInterval(createMai, 450);
+setInterval(createMai, 500);
