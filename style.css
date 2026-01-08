@@ -165,6 +165,9 @@ body.dark .card{
   animation: maiDrop linear forwards;
   opacity: .9;
 }
+.file-banner:empty{
+  display:none;
+}
 
 @keyframes maiDrop{
   from{
