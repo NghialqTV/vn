@@ -1,6 +1,6 @@
 /* ===== RENDER DATA ===== */
 function render(url, boxId){
-  fetch(url)
+  fetch(url, { cache: "force-cache" })
     .then(res => res.json())
     .then(data => {
       document.getElementById(boxId).innerHTML =
