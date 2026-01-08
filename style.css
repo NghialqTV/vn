@@ -252,18 +252,27 @@ header h1{
 .social.yt{
   background:#ff0000;
 }
-/* FIX ICON TO TRÊN SAFARI iOS */
-.social img{
-  width:32px !important;
-  height:32px !important;
-  max-width:32px !important;
-  max-height:32px !important;
-  object-fit:contain;
-}
-
 .social{
   width:56px;
   height:56px;
-  min-width:56px;
-  min-height:56px;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-size:28px 28px !important;
+  background-repeat:no-repeat !important;
+  background-position:center !important;
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
+}
+
+/* TELE */
+.social.tele{
+  background-color:#229ED9;
+  background-image:url("assets/icons/telegram.png");
+}
+
+/* YOUTUBE */
+.social.yt{
+  background-color:#FF0000;
+  background-image:url("assets/icons/youtube.png");
 }
