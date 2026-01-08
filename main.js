@@ -4,20 +4,26 @@ function showTab(id){
 }
 showTab('apps');
 
-function render(url, target, bigImg=false){
- fetch(url).then(r=>r.json()).then(data=>{
-  document.getElementById(target).innerHTML = data.map(i=>`
-   <div class="card">
-     <img src="${i.icon}">
-     <div>
-       <b>${i.name}</b>
-       <div>${i.version}</div>
-     </div>
-     <a href="${i.link}" target="_blank">⬇</a>
-   </div>
-   ${bigImg && i.banner ? `<div class="file-banner"><img src="${i.banner}"></div>` : ``}
-  `).join('');
- });
+function render(url, el, showBanner=false){
+ fetch(url)
+  .then(r=>r.json())
+  .then(data=>{
+   document.getElementById(el).innerHTML = data.map(i=>`
+    <div class="card">
+
+      ${showBanner && i.banner ? `
+      <div class="file-banner">
+        <img src="${i.banner}">
+      </div>` : ``}
+
+      <img src="${i.icon}">
+      <b>${i.name}</b>
+      <div>${i.version}</div>
+
+      <a href="${i.link}" class="btn">Tải</a>
+    </div>
+   `).join('')
+  })
 }
 
 render('data/apps.json','apps');
