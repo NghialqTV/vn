@@ -50,3 +50,19 @@ setInterval(()=>{
  petals.appendChild(p);
  setTimeout(()=>p.remove(),10000);
 },500);
+const filesBox = document.getElementById("files");
+
+fetch("data/files.json")
+  .then(res => res.json())
+  .then(files => {
+    filesBox.innerHTML = files.map(f => `
+      <div class="card">
+        <img class="icon" src="${f.icon}">
+        <div class="info">
+          <b>${f.name}</b>
+          <div>${f.version}</div>
+        </div>
+        <a href="${f.link}">⬇</a>
+      </div>
+    `).join("");
+  });
