@@ -35,9 +35,10 @@ function renderFiles(){
           </div>
 
           ${f.banner ? `
-          <div class="file-banner">
-            <img src="${f.banner}">
-          </div>` : ``}
+            <div class="file-banner">
+              <img src="${f.banner}">
+            </div>
+          ` : ``}
         `).join("");
     });
 }
