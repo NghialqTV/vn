@@ -224,3 +224,38 @@ header h1{
   justify-content:center;
   box-shadow:0 0 8px rgba(29,161,242,.6);
 }
+.socials{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  margin:14px 0 24px;
+}
+
+.social{
+  width:58px;
+  height:58px;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
+  transition:.2s;
+}
+
+.social img{
+  width:34px;
+  height:34px;
+}
+
+.social:hover{
+  transform:scale(1.12);
+}
+
+.social.tele{
+  background:#2aa8e9;
+}
+
+.social.yt{
+  background:#ff0000;
+}
