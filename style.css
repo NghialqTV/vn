@@ -87,21 +87,27 @@ body{
   transform:scale(.9);
 }
 
-/* FILE BANNER – FIX DỨT ĐIỂM */
-.file-banner{
-  margin:16px;
-  border-radius:22px;
-  overflow:hidden;
-  box-shadow:0 12px 26px rgba(0,0,0,.28);
-  background:#fff;
+/* ===== BANNER FILE MOD – TO & FULL ===== */
+.big-banner{
+  margin: 10px 16px 20px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(0,0,0,.28);
 }
 
-/* ÉP BANNER HIỂN THỊ ĐÚNG */
-.file-banner img{
-  width:100%;
-  height:auto;
-  display:block;
-  object-fit:cover;
+.big-banner img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile tối ưu */
+@media (max-width: 600px){
+  .big-banner{
+    margin: 8px 12px 18px;
+    border-radius: 18px;
+  }
 }
 
 /* DARK MODE */
