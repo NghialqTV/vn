@@ -1,9 +1,16 @@
 [
   {
-    "name": "Test File Mod",
+    "name": "Mod Full 100 Skin",
     "version": "Cập nhật mới",
     "icon": "assets/icons/file.png",
-    "banner": "assets/banners/banner.jpg",
+    "banner": "assets/banners/pack100skin.jpg",
+    "link": "#"
+  },
+  {
+    "name": "Mod Full 100 Skin",
+    "version": "Cập nhật mới",
+    "icon": "assets/icons/file.png",
+    "banner": "assets/banners/pack100skin.jpg",
     "link": "#"
   }
 ]
