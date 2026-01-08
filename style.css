@@ -88,15 +88,19 @@ body{
 }
 
 /* FILE BANNER */
+/* FIX BANNER */
 .file-banner{
-  margin:8px 16px 16px;
-  border-radius:18px;
+  margin:16px;
+  border-radius:20px;
   overflow:hidden;
-  box-shadow:0 8px 20px rgba(0,0,0,.25);
+  box-shadow:0 10px 22px rgba(0,0,0,.25);
 }
+
 .file-banner img{
   width:100%;
+  height:auto;
   display:block;
+  background:#fff; /* tránh nền trong suốt */
 }
 
 /* DARK MODE */
