@@ -20,7 +20,9 @@ function render(url, el, showBanner=false){
       <b>${i.name}</b>
       <div>${i.version}</div>
 
-      <a href="${i.link}" class="btn">Tải</a>
+      <a href="${i.link}" class="download-btn">
+  <img src="assets/icons/download.png">
+</a>
     </div>
    `).join('')
   })
