@@ -11,7 +11,7 @@ function render(url, boxId){
               <b>${i.name}</b>
               <div>${i.version}</div>
             </div>
-            <a href="${i.link}">â¬‡</a>
+            <a href="${i.link}">✓</a>
           </div>
         `).join("");
     });
@@ -31,7 +31,7 @@ function renderFiles(){
               <b>${f.name}</b>
               <div>${f.version}</div>
             </div>
-            <a href="${f.link}">â¬‡</a>
+            <a href="${f.link}">✓</a>
           </div>
 
           ${f.banner ? `
