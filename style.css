@@ -380,8 +380,53 @@ body.dark .mod-item{
   width:26px;
   height:26px;
 }
-body.dark .card a{
+
+/* ===== DOWNLOAD SVG BUTTON ===== */
+.download-btn{
+  width:52px;
+  height:52px;
+  border-radius:18px;
+  background: linear-gradient(135deg,#4da3ff,#6dd5ff);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 10px 22px rgba(77,163,255,.55);
+  position:relative;
+  overflow:hidden;
+  transition:.2s;
+}
+
+.download-btn:hover{
+  transform:scale(1.12);
+}
+
+.download-btn:active{
+  transform:scale(.92);
+}
+
+/* ICON */
+.dl-icon{
+  width:26px;
+  height:26px;
+  transition:.25s;
+}
+
+/* ===== LOADING ===== */
+.download-btn.loading{
+  pointer-events:none;
+  background:#999;
+}
+
+.download-btn.loading .dl-icon{
+  animation: spin .9s linear infinite;
+}
+
+@keyframes spin{
+  to{ transform:rotate(360deg); }
+}
+
+/* DARK MODE */
+body.dark .download-btn{
   background: linear-gradient(135deg,#1f6bff,#00c6ff);
-  box-shadow:
-    0 10px 24px rgba(0,198,255,.55);
 }
