@@ -1,23 +1,19 @@
 
 [
   {
-    "name": "Mod Skin Full",
-    "icon": "assets/icons/mod.png",
+    "name": "Bot Mod Skin",
     "link": "mod-full.html"
   },
   {
-    "name": "Mod Skin Lẻ",
-    "icon": "assets/icons/mod.png",
+    "name": "File Mod Lẻ",
     "link": "mod-le.html"
   },
   {
-    "name": "Mod Hiệu Ứng",
-    "icon": "assets/icons/mod.png",
+    "name": "Tài Nguyên",
     "link": "mod-hieu-ung.html"
   },
   {
-    "name": "Mod Rank",
-    "icon": "assets/icons/mod.png",
+    "name": "Mod Map",
     "link": "mod-rank.html"
   }
 ]
