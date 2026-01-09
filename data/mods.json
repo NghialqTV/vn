@@ -2,22 +2,22 @@
 [
   {
     "name": "Mod Skin Full",
-    "icon": "assets/icons/mod-full.png",
+    "icon": "assets/icons/mod.png",
     "link": "mod-full.html"
   },
   {
     "name": "Mod Skin Lẻ",
-    "icon": "assets/icons/mod-le.png",
+    "icon": "assets/icons/mod.png",
     "link": "mod-le.html"
   },
   {
     "name": "Mod Hiệu Ứng",
-    "icon": "assets/icons/mod-effect.png",
+    "icon": "assets/icons/mod.png",
     "link": "mod-hieu-ung.html"
   },
   {
     "name": "Mod Rank",
-    "icon": "assets/icons/mod-rank.png",
+    "icon": "assets/icons/mod.png",
     "link": "mod-rank.html"
   }
 ]
