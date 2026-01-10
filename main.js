@@ -73,18 +73,7 @@ function createMai(){
 }
 
 setInterval(createMai, 500);
-/* ===== MOD SKIN DATA ===== */
-fetch("data/mods.json")
-  .then(res => res.json())
-  .then(mods => {
-    document.getElementById("mods").innerHTML =
-      mods.map(m => `
-        <a href="${m.link}" class="mod-item">
-          ${m.icon ? `<img src="${m.icon}">` : ""}
-          <span>${m.name}</span>
-        </a>
-      `).join("");
-  });
+
 /* ===== MOD SKIN DATA ===== */
 fetch("data/mods.json")
   .then(res => res.json())
