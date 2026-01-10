@@ -93,7 +93,7 @@ const bgMusic = document.getElementById("bgMusic");
 
 function speakWelcome(){
   const msg = new SpeechSynthesisUtterance(
-    "Chào mừng bạn đến với Nghĩa LQ TV. Chúc bạn trải nghiệm vui vẻ."
+    "Thông Báo Từ ADMIN.Anh Em Chịu Khó Vượt Link Để ADMIN Kiếm Tiền Ăn Tết Nhé . Ahihi"
   );
   msg.lang = "vi-VN";
   msg.rate = 1;
