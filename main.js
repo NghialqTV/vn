@@ -86,3 +86,29 @@ fetch("data/mods.json")
         </a>
       `).join("");
   });
+/* ===== VOICE + MUSIC ===== */
+const enterBtn = document.getElementById("enterBtn");
+const welcomeScreen = document.getElementById("welcome-screen");
+const bgMusic = document.getElementById("bgMusic");
+
+function speakWelcome(){
+  const msg = new SpeechSynthesisUtterance(
+    "Chào mừng bạn đến với Nghĩa LQ TV. Chúc bạn trải nghiệm vui vẻ."
+  );
+  msg.lang = "vi-VN";
+  msg.rate = 1;
+  msg.pitch = 1;
+  speechSynthesis.speak(msg);
+}
+
+enterBtn.addEventListener("click", () => {
+  // Ẩn màn hình chào
+  welcomeScreen.style.display = "none";
+
+  // Giọng nói
+  speakWelcome();
+
+  // Nhạc nền
+  bgMusic.volume = 0.4;
+  bgMusic.play().catch(()=>{});
+});
