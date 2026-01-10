@@ -97,7 +97,7 @@ function speakWelcome(){
   );
   msg.lang = "vi-VN";
   msg.rate = 1;
-  msg.pitch = 1;
+  msg.pitch = 1.3;
   speechSynthesis.speak(msg);
 }
 
