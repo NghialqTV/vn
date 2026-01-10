@@ -338,3 +338,63 @@ body.dark .mod-item{
   background:#1e2a3a;
   color:#fff;
 }
+.card{
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.card:hover{
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 
+    0 12px 30px rgba(77,163,255,.35),
+    0 0 12px rgba(77,163,255,.35);
+}
+.card a{
+  position: relative;
+  overflow: hidden;
+}
+
+.card a::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(120deg,
+    transparent,
+    rgba(255,255,255,.6),
+    transparent);
+  transform: translateX(-100%);
+}
+
+.card a:hover::before{
+  transform: translateX(100%);
+  transition:.6s;
+}
+.big-banner{
+  transition: transform .4s ease;
+}
+.big-banner:hover{
+  transform: scale(1.03) rotate(.3deg);
+}
+body{
+  margin:0;
+  font-family:system-ui,sans-serif;
+  background: linear-gradient(-45deg,#4da3ff,#8fd3f4,#c77dff,#4da3ff);
+  background-size:400% 400%;
+  animation:bgMove 12s ease infinite;
+  color:#111;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+.social:hover{
+  box-shadow: 
+    0 0 15px rgba(255,255,255,.6),
+    0 0 25px rgba(77,163,255,.7);
+}
+.social:hover{
+  box-shadow: 
+    0 0 15px rgba(255,255,255,.6),
+    0 0 25px rgba(77,163,255,.7);
+}
