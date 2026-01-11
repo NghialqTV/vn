@@ -1,1 +1,23 @@
 
+[
+  {
+    "name": "Bot Tự Mod Skin",
+    "icon": "assets/icons/bot.png",
+    "link": "https://link-cua-ban.com/file1"
+  },
+  {
+    "name": "Gildo Xích Long",
+    "icon": "assets/icons/gildo.png",
+    "link": "https://link-cua-ban.com/file2"
+  },
+  {
+    "name": "Aya Cinnamorolls Dream",
+    "icon": "assets/icons/aya.png",
+    "link": "https://link-cua-ban.com/file3"
+  },
+  {
+    "name": "Natalya Kuromis Heart",
+    "icon": "assets/icons/natalya.png",
+    "link": "https://link-cua-ban.com/file4"
+  }
+]
