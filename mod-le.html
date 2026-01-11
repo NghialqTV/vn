@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>File Mod Lẻ - NghĩaLQ TV</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .back-btn {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 20px;
+    background: #4da3ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(77,163,255,0.3);
+  }
+  /* Tùy chỉnh danh sách card để text nằm dọc như ảnh mẫu */
+  .card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 16px;
+  }
+</style>
+</head>
+<body class="loaded">
+
+<a href="index.html" class="back-btn">⬅ Quay lại</a>
+
+<header class="top">
+  <h1 class="section-title">📦 Danh Sách Mod Lẻ</h1>
+</header>
+
+<div id="mod-le-list" class="card-list">
+  </div>
+
+<button id="darkToggle" class="dark-toggle">🌙</button>
+
+<footer class="footer">
+  © 2026 NghĩaLQ TV • All Rights Reserved  
+</footer>
+
+<script>
+/* Script riêng cho trang mod lẻ */
+const modLeData = "data/mod-le.json";
+
+function renderModLe() {
+  fetch(modLeData)
+    .then(res => res.json())
+    .then(data => {
+      const container = document.getElementById("mod-le-list");
+      container.innerHTML = data.map(item => `
+        <div class="card">
+          <img class="icon" src="${item.icon}" onerror="this.src='assets/icons/default.png'">
+          <div class="info">
+            <b>"${item.name}"</b>
+          </div>
+          <a href="${item.link}" target="_blank">✓</a>
+        </div>
+      `).join("");
+    })
+    .catch(err => console.error("Lỗi tải dữ liệu:", err));
+}
+
+// Chạy hàm render khi trang load
+window.onload = renderModLe;
+
+/* Dark Mode Toggle tương tự trang chủ */
+const toggle = document.getElementById("darkToggle");
+if(localStorage.getItem("dark") === "true") document.body.classList.add("dark");
+if(toggle){
+  toggle.onclick = () => {
+    document.body.classList.toggle("dark");
+    localStorage.setItem("dark", document.body.classList.contains("dark"));
+  };
+}
+</script>
+</body>
+</html>
