@@ -133,3 +133,30 @@ if(toggle){
     );
   };
 }
+// Hàm mở trang con
+function openModLe() {
+  const subPage = document.getElementById("sub-page");
+  const content = document.getElementById("sub-page-content");
+  
+  subPage.style.display = "block";
+  
+  // Render danh sách skin (bạn có thể lấy từ 1 file json khác)
+  fetch("data/file-mod-le.json")
+    .then(res => res.json())
+    .then(data => {
+      content.innerHTML = data.map(i => `
+        <div class="card">
+          <img class="icon" src="${i.icon}">
+          <div class="info">
+            <b>${i.name}</b>
+          </div>
+          <a href="${i.link}">Tải</a>
+        </div>
+      `).join("");
+    });
+}
+
+// Hàm đóng trang con
+function closeSubPage() {
+  document.getElementById("sub-page").style.display = "none";
+}
